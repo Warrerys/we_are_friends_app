@@ -33,7 +33,7 @@ class FriendsPage extends GetView<FriendsController> {
                   },
                   icon2: Icons.check,
                   onPressed2: () {
-                    controller.itemPageCancel();
+                    controller.itemPagePost();
                   },
                 ),
                 Expanded(
@@ -53,6 +53,7 @@ class FriendsPage extends GetView<FriendsController> {
                         label: 'Имя',
                       ),
                       NsgInput(
+                        maskType: NsgInputMaskType.phone,
                         dataItem: controller.currentItem,
                         fieldName: FriendGenerated.namePhone,
                         label: 'Номер телефона',

@@ -9,8 +9,8 @@ import 'events_controller.dart';
 class EventsPage extends GetView<EventsController> {
   EventsPage({Key? key}) : super(key: key);
 
-  final _textTitle = 'Редактирование друга'.toUpperCase();
-  final _textTitleNew = 'Добавление друга'.toUpperCase();
+  final _textTitle = 'Редактирование события'.toUpperCase();
+  final _textTitleNew = 'Добавление события'.toUpperCase();
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class EventsPage extends GetView<EventsController> {
                   },
                   icon2: Icons.check,
                   onPressed2: () {
-                    controller.itemPageCancel();
+                    controller.itemPagePost();
                   },
                 ),
                 Expanded(
@@ -65,15 +65,15 @@ class EventsPage extends GetView<EventsController> {
                         columns: [
                           NsgTableColumn(
                               name: EventFriendTableGenerated.nameFriendId,
-                              width: 100,
+                              width: 200,
                               presentation: 'Друг'),
                           NsgTableColumn(
                               name: EventFriendTableGenerated.nameSumNeeded,
-                              width: 100,
+                              width: 200,
                               presentation: 'Требуется'),
                           NsgTableColumn(
                               name: EventFriendTableGenerated.nameSumAcquired,
-                              width: 100,
+                              width: 200,
                               presentation: 'Сдано')
                         ],
                       ),

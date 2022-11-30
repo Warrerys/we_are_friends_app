@@ -3,14 +3,12 @@ import 'package:nsg_data/nsg_data.dart';
 
 import 'package:we_are_friends_app/model/data_controller_model.dart';
 
-class EventController extends NsgDataController<Event> {
-  EventController()
+class EventsController extends NsgDataController<Event> {
+  EventsController()
       : super(
             controllerMode: const NsgDataControllerMode(
                 storageType: NsgDataStorageType.local));
-}
 
-class EventsController extends NsgDataController<Event> {
   @override
   Future<Event> doCreateNewItem() async {
     var el = await super.doCreateNewItem();

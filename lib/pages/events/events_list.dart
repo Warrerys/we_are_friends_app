@@ -20,18 +20,18 @@ class EventsListPage extends GetView<EventsController> {
             name: EventGenerated.nameDate,
             presentation: 'Дата события',
             expanded: true,
-            width: 200),
+            width: 100),
         NsgTableColumn(
             name: EventGenerated.nameSumNeeded,
             presentation: 'Требуемая сумма',
             expanded: true,
-            width: 200,
+            width: 100,
             totalSum: true),
         NsgTableColumn(
             name: EventGenerated.nameSumRaised,
             presentation: 'Собранная сумма',
             expanded: true,
-            width: 200,
+            width: 100,
             totalSum: true),
       ],
       availableButtons: NsgTableMenuButtonType.allExceptSelected([
