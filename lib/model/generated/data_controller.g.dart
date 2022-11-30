@@ -32,9 +32,11 @@ class DataControllerGenerated extends NsgBaseController {
         .registerDataItem(EventBudgetTable(), remoteProvider: provider);
     NsgDataClient.client
         .registerDataItem(UserSettings(), remoteProvider: provider);
-    provider!.useNsgAuthorization = true;
+    provider!.useNsgAuthorization = false;
+    provider!.token = "666666666666666";
+    provider!.isAnonymous = false;
     var db = NsgLocalDb.instance;
-    await db.init('we_are_friends');
+    await db.init('we_are_friends_1');
     await provider!.connect(this);
 
     super.onInit();

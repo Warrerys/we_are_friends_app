@@ -45,7 +45,7 @@ class DataController extends DataControllerGenerated {
   void _gotoMainPage() {
     if (_animationFinished && status.isSuccess && !gotoDone) {
       gotoDone = true;
-      Get.offAndToNamed(Routes.mainPage);
+      Get.offAndToNamed(Routes.friendsList);
     }
   }
 }
