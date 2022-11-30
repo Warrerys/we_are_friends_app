@@ -35,7 +35,7 @@ class EventsPageRow extends GetView<EventsFriendTableController> {
                   },
                   icon2: Icons.check,
                   onPressed2: () {
-                    controller.itemPageCancel();
+                    controller.itemPagePost();
                   },
                 ),
                 Expanded(

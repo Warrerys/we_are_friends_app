@@ -5,6 +5,7 @@ import 'package:we_are_friends_app/model/data_controller_model.dart';
 
 import '../../app_pages.dart';
 import 'events_controller.dart';
+import 'events_group/events_group_controller.dart';
 
 class EventsPage extends GetView<EventsController> {
   EventsPage({Key? key}) : super(key: key);
@@ -51,6 +52,25 @@ class EventsPage extends GetView<EventsController> {
                           }),
                       NsgInput(
                         dataItem: controller.currentItem,
+                        fieldName: EventGenerated.nameName,
+                        label: 'Мероприятие',
+                      ),
+                      NsgInput(
+                        dataItem: controller.currentItem,
+                        fieldName: EventGenerated.nameEventGroupId,
+                        label: 'Группа',
+                        selectionController: Get.put(EventGroupController()),
+                        selectionForm: Routes.eventsGroupListPage,
+                      ),
+                      NsgInput(
+                        dataItem: controller.currentItem,
+                        fieldName: EventGenerated.nameSumNeeded,
+                        minLines: 3,
+                        maxLines: 5,
+                        label: 'Описание',
+                      ),
+                      NsgInput(
+                        dataItem: controller.currentItem,
                         fieldName: EventGenerated.nameSumNeeded,
                         label: 'Нужная сумма',
                       ),
@@ -65,15 +85,15 @@ class EventsPage extends GetView<EventsController> {
                         columns: [
                           NsgTableColumn(
                               name: EventFriendTableGenerated.nameFriendId,
-                              width: 200,
+                              width: 100,
                               presentation: 'Друг'),
                           NsgTableColumn(
                               name: EventFriendTableGenerated.nameSumNeeded,
-                              width: 200,
+                              width: 100,
                               presentation: 'Требуется'),
                           NsgTableColumn(
                               name: EventFriendTableGenerated.nameSumAcquired,
-                              width: 200,
+                              width: 100,
                               presentation: 'Сдано')
                         ],
                       ),
