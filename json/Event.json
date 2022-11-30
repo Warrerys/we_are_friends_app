@@ -1,0 +1,89 @@
+{
+    "typeName": "Event",
+    "databaseType": "Мероприятия",
+    "databaseTypeNamespace": "WeAreFriends.Метаданные.Справочники",
+
+    "fields": [
+        {
+            "name": "Id",
+            "databaseName": "Идентификатор",
+            "type": "String",
+            "isPrimary": "true"
+        },
+        {
+            "name": "Date",
+            "databaseName": "Дата",
+            "type": "DateTime"
+        },
+        {
+            "name": "Name",
+            "databaseName": "Наименование",
+            "type": "String"
+        },
+        {
+            "name": "Comment",
+            "databaseName": "Комментарий",
+            "type": "String",
+            "maxLength": 0
+        },
+        {
+            "name": "EventGroupId",
+            "databaseName": "ГруппаМероприятий",
+            "databaseType": "ГруппаМероприятий",
+            "type": "Reference",
+            "referenceName": "EventGroup",
+            "referenceType": "EventGroup",
+            "userVisibility": "true",
+            "userName": "Группа мероприятий"
+        },
+        {
+            "name": "SumNeeded",
+            "databaseName": "НеобходимаяСумма",
+            "type": "double"
+        },
+        {
+            "name": "SumActual",
+            "databaseName": "ФактическаяСумма",
+            "type": "double"
+        },
+        {
+            "name": "SumRaised",
+            "databaseName": "СобраннаяСумма",
+            "type": "double"
+        },
+        {
+            "name": "UserId",
+            "databaseName": "Пользователь",
+            "type": "Guid",
+            "writeOnClient": false
+        },
+        {
+            "name": "FriendTable",
+            "databaseName": "ТаблицаУчастники",
+            "type": "List<Reference>",
+            "referenceType": "EventFriendTable",
+            "alwaysReturnNested": "true"
+        },
+        {
+            "name": "PhotoTable",
+            "type": "List<Reference>",
+            "referenceType": "EventPhotoTable",
+            "alwaysReturnNested": "true"
+        },
+        {
+            "name": "IsFinished",
+            "databaseName": "Завершено",
+            "type": "bool"
+        },
+        {
+            "name": "FinishDate",
+            "type": "DateTime"
+        },
+        {
+            "name": "BudgetTable",
+            "type": "List<Reference>",
+            "referenceType": "EventBudgetTable",
+            "alwaysReturnNested": "true"
+        }
+    ]
+}
